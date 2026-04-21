@@ -1,6 +1,23 @@
-import arcade
+import pygame
 
-sheet = arcade.load_spritesheet('Chess_Pieces_Sprite.png')
+sheet = pygame.image.load('pieces/Chess_Pieces_Sprite.png')
+width, height = sheet.get_size()
+sheetrect = sheet.get_rect()
+slicewidth, sliceheight = width//6, height//2
+
+sprites = []
+
+print(sheetrect)
+
+for y in range(0, height, sliceheight):
+        for x in range(0, width, slicewidth):
+            rect = pygame.Rect(x,y,slicewidth,sliceheight)
+            sprite = sheet.subsurface(rect)
+
+pygame.display.set_mode(size=(height, width))
+
+# for sprite in sprites:
+#      pygame.display
 
 pieces = {
 
@@ -38,5 +55,6 @@ exemple : white pawn = 100001 ou 0b100001, black queen = 011000 ou 0b011000
 
 class Pieces:
 
-    def __init__(self,color,pawn) -> None:
+    def __init__(self,color,pawn,img) -> None:
         self.piece = bin(color)+bin(pawn)
+        self.img = img
