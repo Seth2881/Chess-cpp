@@ -1,4 +1,4 @@
-import pygame
+import arcade
 
 class Board:
     def __init__(self,position:str='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq – 0 1') -> None:
@@ -17,7 +17,7 @@ class Board:
 
         self.position = self.loadposition(position)
 
-        self.board = 'p'
+        self.board = arcade.load_spritesheet("Chessboard.png")
 
     def loadposition(self,position):
         load = position.split(' ')
