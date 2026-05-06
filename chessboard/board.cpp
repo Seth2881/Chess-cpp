@@ -1,18 +1,13 @@
 #include <iostream>
-#include <bitset>
-#include <utility>
 #include <vector>
 #include <string>
 #include <cctype>
 #include <ranges>
 #include <memory>
 #include <algorithm>
-#include <raylib.h>
+#include "raylib.h"
 #include "../pieces/pieces.cpp"
 using namespace std;
-
-string START_POSITION = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq – 0 1";
-extern string START_POSITION;
 
 class Board {
 private :
@@ -29,7 +24,7 @@ private :
     short midTurns;
 
 public :
-    Board(string fenPosition = START_POSITION) {
+    Board(string fenPosition = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq – 0 1") {
         startingposition = fenPosition;
 
         auto split_view = startingposition | std::views::split(' ');
@@ -57,24 +52,24 @@ public :
                     longCastle = castling.contains('Q');
 
                     switch (tolower(board[i])) {
-                        case 'k' : pieceOnBoard.push_back(make_unique<King>(white, counter, castle, longCastle)); break;
-                        case 'q' : pieceOnBoard.push_back(make_unique<Queen>(white, counter)); break;
-                        case 'r' : pieceOnBoard.push_back(make_unique<Rook>(white, counter)); break;
-                        case 'b' : pieceOnBoard.push_back(make_unique<Bishop>(white, counter)); break;
-                        case 'n' : pieceOnBoard.push_back(make_unique<Knight>(white, counter)); break;
-                        case 'p' : pieceOnBoard.push_back(make_unique<Pawn>(white, counter, false)); break;
+                        // case 'k' : pieceOnBoard.push_back(make_unique<King>(white, counter, castle, longCastle)); break;
+                        // case 'q' : pieceOnBoard.push_back(make_unique<Queen>(white, counter)); break;
+                        // case 'r' : pieceOnBoard.push_back(make_unique<Rook>(white, counter)); break;
+                        // case 'b' : pieceOnBoard.push_back(make_unique<Bishop>(white, counter)); break;
+                        // case 'n' : pieceOnBoard.push_back(make_unique<Knight>(white, counter)); break;
+                        // case 'p' : pieceOnBoard.push_back(make_unique<Pawn>(white, counter, false)); break;
                     }
                 } else {
                     castle = castling.contains('k');
                     longCastle = castling.contains('q');
 
                     switch (tolower(board[i])) {
-                        case 'k' : pieceOnBoard.push_back(make_unique<King>(black, counter, castle, longCastle)); break;
-                        case 'q' : pieceOnBoard.push_back(make_unique<Queen>(black, counter)); break;
-                        case 'r' : pieceOnBoard.push_back(make_unique<Rook>(black, counter)); break;
-                        case 'b' : pieceOnBoard.push_back(make_unique<Bishop>(black, counter)); break;
-                        case 'n' : pieceOnBoard.push_back(make_unique<Knight>(black, counter)); break;
-                        case 'p' : pieceOnBoard.push_back(make_unique<Pawn>(black, counter, false)); break;
+                        // case 'k' : pieceOnBoard.push_back(make_unique<King>(black, counter, castle, longCastle)); break;
+                        // case 'q' : pieceOnBoard.push_back(make_unique<Queen>(black, counter)); break;
+                        // case 'r' : pieceOnBoard.push_back(make_unique<Rook>(black, counter)); break;
+                        // case 'b' : pieceOnBoard.push_back(make_unique<Bishop>(black, counter)); break;
+                        // case 'n' : pieceOnBoard.push_back(make_unique<Knight>(black, counter)); break;
+                        // case 'p' : pieceOnBoard.push_back(make_unique<Pawn>(black, counter, false)); break;
                     }
                 }
                 counter--;
