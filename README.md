@@ -29,3 +29,46 @@ Chess-cpp/
 │   └── pieces.cpp               # Polymorphic Piece class & individual piece implementations
 ├── main.cpp                     # Entry point
 └── README.md                    # Project documentation
+```
+
+---
+
+## 🛠 Tech Stack & Requirements
+
+* **Language:** Modern C++ (C++20 / C++23)
+* **Compiler:** MSVC (Visual Studio), GCC, or Clang supporting C++20 ranges and views
+* **Dependencies:**
+  * C++ Standard Library (`<iostream>`, `<vector>`, `<bitset>`, `<memory>`, `<ranges>`)
+  * Raylib *(configured for upcoming visual frontend)*
+
+---
+
+## 🚀 Building & Running
+
+### Using MSVC / Visual Studio Code
+
+1. Ensure a C++ compiler with C++20 support is available.
+2. Compile and link the main entry point:
+   ```bash
+   g++ -std=c++20 main.cpp -o chess_app
+   ```
+
+---
+
+## 🗺️ Roadmap & Future Plans
+* **Refactor #include** ".cpp" include chains into proper .hpp/.cpp header separations.
+
+* **Complete CMake build configuration** across cross-platform compilers.
+
+* **Finish move validation logic** (pin checks, legal check/checkmate detection).
+
+* **Implement a full Raylib 2D GUI** for visual playability.
+
+* **Develop a custom Chess AI/Bot** (Minimax search with Alpha-Beta pruning).
+
+* **Explore engine migration/port** to C# with Unity/Godot for 2D/3D rendering.
+
+---
+
+## 👤 Author
+### Seth (***@Seth2881***)
